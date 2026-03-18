@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:to_do_app_reverpod/routes/routes.dart';
+import '../../../../core/widgets/app_drawer.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../providers/todo_provider.dart';
 import 'add_edit_todo_screen.dart';
@@ -12,9 +13,9 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final todos = ref.watch(todoListProvider);
-
     return Scaffold(
       appBar: AppBar(title: Text("My Todos")),
+      drawer: AppDrawer(),
       body: Column(
         children: [
           Expanded(
@@ -48,7 +49,7 @@ class HomeScreen extends ConsumerWidget {
             padding: const EdgeInsets.all(16.0),
             child: CustomButton(
               title: "Add Todo",
-              onPressed: () => context.go(AppRoutes.addNotesScreen),
+              onPressed: () => context.push(AppRoutes.addNotesScreen),
             ),
           ),
         ],
