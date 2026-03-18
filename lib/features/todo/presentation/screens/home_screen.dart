@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+import 'package:to_do_app_reverpod/routes/routes.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../providers/todo_provider.dart';
 import 'add_edit_todo_screen.dart';
@@ -45,8 +47,8 @@ class HomeScreen extends ConsumerWidget {
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: CustomButton(
-              text: "Add Todo",
-              onTap: () => Navigator.pushNamed(context, '/add'),
+              title: "Add Todo",
+              onPressed: () => context.go(AppRoutes.addNotesScreen),
             ),
           ),
         ],

@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../main.dart';
+import '../../../../routes/routes.dart';
 
 class SplashController extends StateNotifier<void> {
   final Ref ref;
@@ -15,11 +16,11 @@ class SplashController extends StateNotifier<void> {
 
     if (firstTime) {
       await prefs.setBool('first_time', false);
-      return '/intro';
+      return AppRoutes.introScreen;
     } else if (loggedIn) {
-      return '/home';
+      return AppRoutes.homeScreen;
     } else {
-      return '/login';
+      return AppRoutes.loginAuthScreen;
     }
   }
   Future<void> navigate(BuildContext context) async {

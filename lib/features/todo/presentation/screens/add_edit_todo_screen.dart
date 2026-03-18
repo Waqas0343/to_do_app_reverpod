@@ -24,17 +24,15 @@ class AddEditTodoScreen extends ConsumerWidget {
             CustomTextField(controller: controller, hint: "Todo Title"),
             SizedBox(height: 20),
             CustomButton(
-              text: "Save",
-              onTap: () {
+              title: "Save",
+              onPressed: () {
                 final title = controller.text.trim();
                 if (title.isEmpty) return;
-
                 if (todo != null) {
                   ref.read(todoListProvider.notifier).updateTodo(todo!.id, title);
                 } else {
                   ref.read(todoListProvider.notifier).addTodo(title);
                 }
-
                 Navigator.pop(context);
               },
             ),

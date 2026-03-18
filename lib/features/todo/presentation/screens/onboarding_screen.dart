@@ -18,8 +18,8 @@ class OnboardingScreen extends ConsumerWidget {
           ),
            SizedBox(height: 20),
           CustomButton(
-            text: "Get Started",
-            onTap: () {
+            title: "Get Started",
+            onPressed: () {
               ref.read(onboardingControllerProvider.notifier).goToLogin(context);
             },
           ),

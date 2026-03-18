@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_app_reverpod/routes/routes.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../../../../core/widgets/custom_textfield.dart';
 
@@ -14,7 +15,7 @@ class SignupScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text("Sign Up")),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding:  EdgeInsets.all(16.0),
         child: Column(
           children: [
             CustomTextField(controller: nameController, hint: "Name"),
@@ -24,8 +25,8 @@ class SignupScreen extends StatelessWidget {
             CustomTextField(controller: passwordController, hint: "Password"),
             SizedBox(height: 20),
             CustomButton(
-              text: "Sign Up",
-              onTap: () => Navigator.pushNamed(context, '/home'),
+              title: "Sign Up",
+              onPressed: () => Navigator.pushNamed(context, AppRoutes.homeScreen),
             ),
           ],
         ),

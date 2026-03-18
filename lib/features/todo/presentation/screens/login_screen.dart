@@ -22,8 +22,8 @@ class LoginScreen extends ConsumerWidget {
             CustomTextField(controller: controller.passwordController, hint: "Password"),
              SizedBox(height: 20),
             CustomButton(
-              text: "Login",
-              onTap: () {
+              title: "Login",
+              onPressed: () {
                 ref.read(loginControllerProvider.notifier).login( context, controller.emailController.text.trim(), controller.passwordController.text.trim(), );
               }
             ),
