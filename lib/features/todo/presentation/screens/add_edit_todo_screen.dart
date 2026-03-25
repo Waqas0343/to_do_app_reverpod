@@ -18,10 +18,10 @@ class AddEditTodoScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(title: Text(todo != null ? "Edit Todo" : "Add Todo")),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding:  EdgeInsets.all(16.0),
         child: Column(
           children: [
-            CustomTextField(controller: controller, hint: "Todo Title"),
+            CustomTextFormField(controller: controller, hintText: "Todo Title"),
             SizedBox(height: 20),
             CustomButton(
               title: "Save",

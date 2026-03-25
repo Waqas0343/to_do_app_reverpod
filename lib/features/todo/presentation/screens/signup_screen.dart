@@ -17,11 +17,11 @@ class SignupScreen extends ConsumerWidget {
         padding:  EdgeInsets.all(16.0),
         child: Column(
           children: [
-            CustomTextField(controller: controller.nameController, hint: "Name"),
+            CustomTextFormField(controller: controller.nameController, hintText: "Name"),
             SizedBox(height: 12),
-            CustomTextField(controller: controller.emailController, hint: "Email"),
+            CustomTextFormField(controller: controller.emailController, hintText: "Email"),
             SizedBox(height: 12),
-            CustomTextField(controller: controller.passwordController, hint: "Password"),
+            CustomTextFormField(controller: controller.passwordController, hintText: "Password"),
             SizedBox(height: 20),
             CustomButton(
               title: "Sign Up",

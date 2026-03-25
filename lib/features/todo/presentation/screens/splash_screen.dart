@@ -5,11 +5,9 @@ import '../providers/splash_rev_provider.dart';
 
 class SplashScreen extends ConsumerStatefulWidget {
   const SplashScreen({super.key});
-
   @override
   ConsumerState<SplashScreen> createState() => _SplashScreenState();
 }
-
 class _SplashScreenState extends ConsumerState<SplashScreen> {
   @override
   void initState() {
@@ -20,7 +18,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: AppColors.primary,
+      backgroundColor: AppColors.secondary,
       body: Center(
         child: Text(
           "Todo Pro App",

@@ -14,22 +14,37 @@ class LoginScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(title: const Text("Login")),
       body: Padding(
-        padding:  EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0),
         child: Column(
           children: [
-            CustomTextField(controller: controller.emailController, hint: "Email"),
-             SizedBox(height: 12),
-            CustomTextField(controller: controller.passwordController, hint: "Password"),
-             SizedBox(height: 20),
+            CustomTextFormField(
+              controller: controller.emailController,
+              hintText: "Email",
+            ),
+            SizedBox(height: 12),
+            CustomTextFormField(
+              controller: controller.passwordController,
+              hintText: "Password",
+            ),
+            SizedBox(height: 20),
             CustomButton(
               title: "Login",
               onPressed: () {
-                ref.read(loginControllerProvider.notifier).login( context, controller.emailController.text.trim(), controller.passwordController.text.trim(), );
-              }
+                ref
+                    .read(loginControllerProvider.notifier)
+                    .login(
+                      context,
+                      controller.emailController.text.trim(),
+                      controller.passwordController.text.trim(),
+                    );
+              },
             ),
             TextButton(
               onPressed: () => controller.goToSignUp(context),
-              child: const Text("Don't have an account? Sign Up"),
+              child: Text(
+                "Don't have an account? Sign Up",
+                style: Theme.of(context).textTheme.titleSmall?.copyWith(),
+              ),
             ),
           ],
         ),

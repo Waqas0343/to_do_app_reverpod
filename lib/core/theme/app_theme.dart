@@ -15,18 +15,18 @@ class ThemeNotifier extends StateNotifier<ThemeState> {
   static final ThemeData _lightTheme = _buildLightTheme();
   static ThemeData _buildLightTheme() {
     final MaterialColor primaryColor = MaterialColor(
-      0xFFEFE6C8,
+      0xFFF59904,
       {
-        50: Color(0xFFFBFAF3),
-        100: Color(0xFFF5F0DD),
-        200: Color(0xFFEEE4C3),
-        300: Color(0xFFE7D8A9),
-        400: Color(0xFFE2CF95),
-        500: Color(0xFFEFE6C8),
-        600: Color(0xFFD8CFAF),
-        700: Color(0xFFC1B896),
-        800: Color(0xFFAAA17D),
-        900: Color(0xFF8C8461),
+        50:  Color(0xFFFFF3E0),
+        100: Color(0xFFFFE0B2),
+        200: Color(0xFFFFCC80),
+        300: Color(0xFFFFB74D),
+        400: Color(0xFFFFA726),
+        500: Color(0xFFF59904),
+        600: Color(0xFFE68900),
+        700: Color(0xFFCC7A00),
+        800: Color(0xFFB36A00),
+        900: Color(0xFF8C5200),
       },
     );
 
@@ -48,7 +48,7 @@ class ThemeNotifier extends StateNotifier<ThemeState> {
         titleTextStyle: GoogleFonts.aDLaMDisplay(
           fontSize: 16,
           fontWeight: FontWeight.bold,
-          color: AppColors.primary,
+          color: AppColors.textLight,
         ),
       ),
 
