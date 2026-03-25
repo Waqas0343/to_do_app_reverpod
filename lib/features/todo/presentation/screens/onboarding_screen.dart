@@ -9,21 +9,24 @@ class OnboardingScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-           Text(
-            "Welcome to Todo App",
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
-           SizedBox(height: 20),
-          CustomButton(
-            title: "Get Started",
-            onPressed: () {
-              ref.read(onboardingControllerProvider.notifier).goToLogin(context);
-            },
-          ),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+             Text(
+              "Welcome to Todo App",
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+             SizedBox(height: 20),
+            CustomButton(
+              title: "Get Started",
+              onPressed: () {
+                ref.read(onboardingControllerProvider.notifier).goToLogin(context);
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

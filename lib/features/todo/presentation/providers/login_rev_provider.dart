@@ -10,6 +10,7 @@ class LoginController extends StateNotifier<void> {
   final TextEditingController passwordController = TextEditingController();
   final Ref ref;
   LoginController(this.ref) : super(null);
+
   Future<void> login(BuildContext context, String email, String password) async {
     if (email.isEmpty || password.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(

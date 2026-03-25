@@ -20,15 +20,16 @@ final sharedPreferencesProvider = Provider<SharedPreferences>((ref) {
   throw UnimplementedError();
 });
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final theme = ref.watch(appThemeProvider).themeData;
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Todo Pro App',
-      theme: AppTheme.lightTheme,
+      theme: theme,
       routerConfig: appRouter,
     );
   }
