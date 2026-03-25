@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -7,7 +6,6 @@ import 'app_colors.dart';
 
 class ThemeState {
   final ThemeData themeData;
-
   ThemeState({required this.themeData});
 }
 
@@ -69,12 +67,10 @@ class ThemeNotifier extends StateNotifier<ThemeState> {
         ),
       ),
 
-      floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
         elevation: 2,
       ),
-
       primaryColor: primaryColor,
-
       colorScheme: ColorScheme.fromSwatch(
         primarySwatch: primaryColor,
         backgroundColor: Colors.white,
